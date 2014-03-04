@@ -28,7 +28,7 @@ There's also an example project. In the example, you can swipe horizontally and 
 ## Installation
 There are two options:
 
- 1. Use [Cocoapods](http://cocoapods.org). Shimmer isn't yet available in the main Cocoapods repository, but it will be soon. For now, you can reference this repository directly.
+ 1. Shimmer is available as `Shimmer` in [Cocoapods](http://cocoapods.org).
  2. Manually add the files into your Xcode project. Slightly simpler, but updates are also manual.
 
 Shimmer requires iOS 6 or later.
