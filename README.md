@@ -11,7 +11,7 @@ To use Shimmer, create a `FBShimmeringView` or `FBShimmeringLayer` and add your 
 An example of making a label shimmer:
 
 ```objective-c
-FBShimmeringView *shimmeringView = [[FBShimeringView alloc] initWithFrame:self.view.bounds];
+FBShimmeringView *shimmeringView = [[FBShimmeringView alloc] initWithFrame:self.view.bounds];
 [self.view addSubview:shimmeringView];
 
 UILabel *loadingLabel = [[UILabel alloc] initWithFrame:shimmeringView.bounds];
