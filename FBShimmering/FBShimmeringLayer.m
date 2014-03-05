@@ -234,7 +234,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 - (void)_createMaskIfNeeded
 {
   if (_shimmering && !_maskLayer) {
-    _maskLayer = [FBShimmeringMaskLayer layer];
+    _maskLayer = [[FBShimmeringMaskLayer layer] retain];
     _maskLayer.delegate = self;
     _contentLayer.mask = _maskLayer;
     [self _updateMaskColors];
