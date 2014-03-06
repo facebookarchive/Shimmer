@@ -183,7 +183,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
   }
 }
 
-- (void)setShimmeringSpeed:(float)speed
+- (void)setShimmeringSpeed:(CGFloat)speed
 {
   if (speed != _shimmeringSpeed) {
     _shimmeringSpeed = speed;
