@@ -21,7 +21,7 @@
 #endif
 
 #if TARGET_IPHONE_SIMULATOR
-UIKIT_EXTERN CGFloat UIAnimationDragCoefficient(void); // UIKit private drag coeffient, use judiciously
+UIKIT_EXTERN float UIAnimationDragCoefficient(void); // UIKit private drag coeffient, use judiciously
 #endif
 
 static CGFloat FBShimmeringLayerDragCoefficient(void)
