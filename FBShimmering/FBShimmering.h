@@ -23,6 +23,9 @@
 //! @abstract The speed of shimmering, in points per second. Defaults to 230.
 @property (assign, nonatomic, readwrite) CGFloat shimmeringSpeed;
 
+//! @abstract The highlight width of shimmering. Range of [0,1], defaults to 0.33.
+@property (assign, nonatomic, readwrite) CGFloat shimmeringHighlightWidth;
+
 //! @abstract The duration of the fade used when shimmer begins. Defaults to 0.1.
 @property (assign, nonatomic, readwrite) CFTimeInterval shimmeringBeginFadeDuration;
 

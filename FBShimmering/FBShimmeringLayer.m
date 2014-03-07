@@ -142,6 +142,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 @synthesize shimmeringPauseDuration = _shimmeringPauseDuration;
 @synthesize shimmeringOpacity = _shimmeringOpacity;
 @synthesize shimmeringSpeed = _shimmeringSpeed;
+@synthesize shimmeringHighlightWidth = _shimmeringHighlightWidth;
 @synthesize shimmeringFadeTime = _shimmeringFadeTime;
 @synthesize shimmeringBeginFadeDuration = _shimmeringBeginFadeDuration;
 @synthesize shimmeringEndFadeDuration = _shimmeringEndFadeDuration;
@@ -153,6 +154,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
     // default configuration
     _shimmeringPauseDuration = 0.4;
     _shimmeringSpeed = 230.0;
+    _shimmeringHighlightWidth = 0.33;
     _shimmeringOpacity = 0.5;
     _shimmeringBeginFadeDuration = 0.1;
     _shimmeringEndFadeDuration = 0.3;
@@ -191,6 +193,14 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
   }
 }
 
+- (void)setShimmeringHighlightWidth:(CGFloat)width
+{
+  if (width != _shimmeringHighlightWidth) {
+    _shimmeringHighlightWidth = width;
+    [self _updateShimmering];
+  }
+}
+
 - (void)setShimmeringPauseDuration:(CFTimeInterval)duration
 {
   if (duration != _shimmeringPauseDuration) {
@@ -216,6 +226,9 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
   if (nil != _maskLayer) {
     [self _updateMaskLayout];
   }
+  _maskLayer.locations = @[@((1-_shimmeringHighlightWidth)/2.f),
+                           @(0.5),
+                           @(1.f-(1-_shimmeringHighlightWidth)/2.f)];
 }
 
 #pragma mark - Internal
@@ -279,7 +292,6 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
   // setup the gradient for shimmering
   _maskLayer.startPoint = CGPointMake((width + extraDistance) / fullShimmerLength, 0.0);
   _maskLayer.endPoint = CGPointMake(travelDistance / fullShimmerLength, 0.0);
-
   // position for the start of the animation
   _maskLayer.anchorPoint = CGPointZero;
   _maskLayer.position = CGPointMake(-travelDistance, 0.0);
