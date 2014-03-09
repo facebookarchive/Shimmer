@@ -23,7 +23,7 @@ shimmeringView.contentView = loadingLabel;
 shimmeringView.shimmering = YES;
 ```
 
-There's also an example project. In the example, you can swipe horizontally and vertically to try various shimmering parameters, or tap to start or stop shimmering.
+There's also an example project. In the example, you can swipe horizontally and vertically to try various shimmering parameters, or tap to start or stop shimmering. (To build the example locally, you'll need to open `FBShimmering.xcworkpace` rather than the `.xcodeproj`.)
 
 ## Installation
 There are two options:
