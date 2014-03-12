@@ -51,7 +51,7 @@ static CABasicAnimation *fade_animation(id delegate, CALayer *layer, CGFloat opa
 {
   CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
   animation.delegate = delegate;
-  animation.fromValue = @([layer.presentationLayer opacity]);
+  animation.fromValue = @([(layer.presentationLayer ?: layer) opacity]);
   animation.toValue = @(opacity);
   animation.fillMode = kCAFillModeBoth;
   animation.removedOnCompletion = NO;
