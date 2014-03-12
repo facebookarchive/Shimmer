@@ -55,6 +55,7 @@ static CABasicAnimation *fade_animation(id delegate, CALayer *layer, CGFloat opa
   animation.toValue = @(opacity);
   animation.fillMode = kCAFillModeBoth;
   animation.removedOnCompletion = NO;
+  animation.duration = duration;
   FBShimmeringLayerAnimationApplyDragCoefficient(animation);
   return animation;
 }
@@ -154,7 +155,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
     // default configuration
     _shimmeringPauseDuration = 0.4;
     _shimmeringSpeed = 230.0;
-    _shimmeringHighlightWidth = 0.33;
+    _shimmeringHighlightWidth = 1.0;
     _shimmeringOpacity = 0.5;
     _shimmeringBeginFadeDuration = 0.1;
     _shimmeringEndFadeDuration = 0.3;
@@ -223,12 +224,10 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
   _contentLayer.anchorPoint = CGPointMake(0.5, 0.5);
   _contentLayer.bounds = r;
   _contentLayer.position = CGPointMake(CGRectGetMidX(r), CGRectGetMidY(r));
+  
   if (nil != _maskLayer) {
     [self _updateMaskLayout];
   }
-  _maskLayer.locations = @[@((1-_shimmeringHighlightWidth)/2.f),
-                           @(0.5),
-                           @(1.f-(1-_shimmeringHighlightWidth)/2.f)];
 }
 
 #pragma mark - Internal
@@ -292,6 +291,13 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
   // setup the gradient for shimmering
   _maskLayer.startPoint = CGPointMake((width + extraDistance) / fullShimmerLength, 0.0);
   _maskLayer.endPoint = CGPointMake(travelDistance / fullShimmerLength, 0.0);
+  
+  // position the gradient for the desired width
+  CGFloat highlightOutsideWidth = (1.0 - _shimmeringHighlightWidth) / 2.0;
+  _maskLayer.locations = @[@(highlightOutsideWidth),
+                           @(0.5),
+                           @(1.0 - highlightOutsideWidth)];
+  
   // position for the start of the animation
   _maskLayer.anchorPoint = CGPointZero;
   _maskLayer.position = CGPointMake(-travelDistance, 0.0);
