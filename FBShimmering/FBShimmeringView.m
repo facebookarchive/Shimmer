@@ -43,6 +43,7 @@ LAYER_RW_PROPERTY(shimmeringPauseDuration, setShimmeringPauseDuration:, CFTimeIn
 LAYER_RW_PROPERTY(shimmeringOpacity, setShimmeringOpacity:, CGFloat)
 LAYER_RW_PROPERTY(shimmeringSpeed, setShimmeringSpeed:, CGFloat)
 LAYER_RW_PROPERTY(shimmeringHighlightWidth, setShimmeringHighlightWidth:, CGFloat)
+LAYER_RW_PROPERTY(shimmeringDirection, setShimmeringDirection:, FBShimmerDirection)
 LAYER_ACCESSOR(shimmeringFadeTime, CFTimeInterval)
 LAYER_RW_PROPERTY(shimmeringBeginFadeDuration, setShimmeringBeginFadeDuration:, CFTimeInterval)
 LAYER_RW_PROPERTY(shimmeringEndFadeDuration, setShimmeringEndFadeDuration:, CFTimeInterval)

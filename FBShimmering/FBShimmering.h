@@ -9,6 +9,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, FBShimmerDirection) {
+    FBShimmerDirectionRight,    // Shimmer animation goes from left to right
+    FBShimmerDirectionLeft      // Shimmer animation goes from right to left
+};
+
 @protocol FBShimmering <NSObject>
 
 //! @abstract Set this to YES to start shimming and NO to stop. Defaults to NO.
@@ -25,6 +30,9 @@
 
 //! @abstract The highlight width of shimmering. Range of [0,1], defaults to 0.33.
 @property (assign, nonatomic, readwrite) CGFloat shimmeringHighlightWidth;
+
+//! @abstract The direction of shimmering animation. Defaults to FBShimmerDirectionRight.
+@property (assign, nonatomic, readwrite) FBShimmerDirection shimmeringDirection;
 
 //! @abstract The duration of the fade used when shimmer begins. Defaults to 0.1.
 @property (assign, nonatomic, readwrite) CFTimeInterval shimmeringBeginFadeDuration;

@@ -72,7 +72,7 @@ static CABasicAnimation *shimmer_end_fade_animation(id delegate, CALayer *layer,
   return animation;
 }
 
-static CABasicAnimation *shimmer_slide_animation(id delegate, CFTimeInterval duration)
+static CABasicAnimation *shimmer_slide_animation(id delegate, CFTimeInterval duration, FBShimmerDirection direction)
 {
   CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
   animation.delegate = delegate;
@@ -80,15 +80,19 @@ static CABasicAnimation *shimmer_slide_animation(id delegate, CFTimeInterval dur
   animation.duration = duration;
   animation.repeatCount = HUGE_VALF;
   FBShimmeringLayerAnimationApplyDragCoefficient(animation);
+  if (direction == FBShimmerDirectionLeft) {
+    animation.speed = -abs(animation.speed);
+  }
   return animation;
 }
 
 // take a shimmer slide animation and turns into repeating
-static CAAnimation *shimmer_slide_repeat(CAAnimation *a, CFTimeInterval duration)
+static CAAnimation *shimmer_slide_repeat(CAAnimation *a, CFTimeInterval duration, FBShimmerDirection direction)
 {
   CAAnimation *anim = [a copy];
   anim.repeatCount = HUGE_VALF;
   anim.duration = duration;
+  anim.speed = (direction == FBShimmerDirectionRight) ? abs(anim.speed) : -abs(anim.speed);
   return anim;
 }
 
@@ -144,6 +148,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 @synthesize shimmeringOpacity = _shimmeringOpacity;
 @synthesize shimmeringSpeed = _shimmeringSpeed;
 @synthesize shimmeringHighlightWidth = _shimmeringHighlightWidth;
+@synthesize shimmeringDirection = _shimmeringDirection;
 @synthesize shimmeringFadeTime = _shimmeringFadeTime;
 @synthesize shimmeringBeginFadeDuration = _shimmeringBeginFadeDuration;
 @synthesize shimmeringEndFadeDuration = _shimmeringEndFadeDuration;
@@ -157,6 +162,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
     _shimmeringSpeed = 230.0;
     _shimmeringHighlightWidth = 1.0;
     _shimmeringOpacity = 0.5;
+    _shimmeringDirection = FBShimmerDirectionRight;
     _shimmeringBeginFadeDuration = 0.1;
     _shimmeringEndFadeDuration = 0.3;
   }
@@ -198,6 +204,14 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 {
   if (width != _shimmeringHighlightWidth) {
     _shimmeringHighlightWidth = width;
+    [self _updateShimmering];
+  }
+}
+
+- (void)setShimmeringDirection:(FBShimmerDirection)direction
+{
+  if (direction != _shimmeringDirection) {
+    _shimmeringDirection = direction;
     [self _updateShimmering];
   }
 }
@@ -378,10 +392,10 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
     
     if (slideAnimation != nil) {
       // ensure existing slide animation repeats
-      [_maskLayer addAnimation:shimmer_slide_repeat(slideAnimation, animationDuration) forKey:kFBShimmerSlideAnimationKey];
+      [_maskLayer addAnimation:shimmer_slide_repeat(slideAnimation, animationDuration, _shimmeringDirection) forKey:kFBShimmerSlideAnimationKey];
     } else {
       // add slide animation
-      slideAnimation = shimmer_slide_animation(self, animationDuration);
+      slideAnimation = shimmer_slide_animation(self, animationDuration, _shimmeringDirection);
       slideAnimation.fillMode = kCAFillModeForwards;
       slideAnimation.removedOnCompletion = NO;
       slideAnimation.beginTime = CACurrentMediaTime() + fadeOutAnimation.duration;
