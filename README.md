@@ -17,7 +17,7 @@ FBShimmeringView *shimmeringView = [[FBShimmeringView alloc] initWithFrame:self.
 UILabel *loadingLabel = [[UILabel alloc] initWithFrame:shimmeringView.bounds];
 loadingLabel.textAlignment = NSTextAlignmentCenter;
 loadingLabel.text = NSLocalizedString(@"Shimmer", nil);
-shimmeringView.contentView = loadingLabel;
+[shimmeringView addSubview:loadingLabel];
 
 // Start shimmering.
 shimmeringView.shimmering = YES;
