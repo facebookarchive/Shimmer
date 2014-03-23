@@ -16,7 +16,4 @@
  */
 @interface FBShimmeringLayer : CALayer <FBShimmering>
 
-//! @abstract The content layer to be shimmered.
-@property (strong, nonatomic) CALayer *contentLayer;
-
 @end

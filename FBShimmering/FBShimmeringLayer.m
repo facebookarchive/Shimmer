@@ -137,7 +137,6 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 
 @implementation FBShimmeringLayer
 {
-  CALayer *_contentLayer;
   FBShimmeringMaskLayer *_maskLayer;
 }
 
@@ -175,10 +174,6 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 {
   // reset mask
   self.maskLayer = nil;
-
-  // note content layer and add for display
-  _contentLayer = contentLayer;
-  self.sublayers = contentLayer ? @[contentLayer] : nil;
 
   // update shimmering animation
   [self _updateShimmering];
@@ -234,11 +229,6 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 
 - (void)layoutSublayers
 {
-  CGRect r = self.bounds;
-  _contentLayer.anchorPoint = CGPointMake(0.5, 0.5);
-  _contentLayer.bounds = r;
-  _contentLayer.position = CGPointMake(CGRectGetMidX(r), CGRectGetMidY(r));
-  
   if (nil != _maskLayer) {
     [self _updateMaskLayout];
   }
@@ -256,7 +246,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
   [CATransaction setDisableActions:YES];
 
   self.maskLayer = nil;
-  _contentLayer.mask = nil;
+  self.mask = nil;
   
   [CATransaction setDisableActions:disableActions];
 }
@@ -266,7 +256,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
   if (_shimmering && !_maskLayer) {
     _maskLayer = [FBShimmeringMaskLayer layer];
     _maskLayer.delegate = self;
-    _contentLayer.mask = _maskLayer;
+    self.mask = _maskLayer;
     [self _updateMaskColors];
     [self _updateMaskLayout];
   }
@@ -290,7 +280,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 - (void)_updateMaskLayout
 {
   // Everything outside the mask layer is hidden, so we need to create a mask long enough for the shimmered layer to be always covered by the mask.
-  CGFloat width = CGRectGetWidth(_contentLayer.bounds);
+  CGFloat width = CGRectGetWidth(self.bounds);
   if (0 == width) {
     return;
   }
@@ -315,7 +305,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
   // position for the start of the animation
   _maskLayer.anchorPoint = CGPointZero;
   _maskLayer.position = CGPointMake(-travelDistance, 0.0);
-  _maskLayer.bounds = CGRectMake(0.0, 0.0, fullShimmerLength, CGRectGetHeight(_contentLayer.bounds));
+  _maskLayer.bounds = CGRectMake(0.0, 0.0, fullShimmerLength, CGRectGetHeight(self.bounds));
 }
 
 - (void)_updateShimmering
@@ -388,7 +378,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
     CAAnimation *slideAnimation = [_maskLayer animationForKey:kFBShimmerSlideAnimationKey];
     
     // compute shimmer duration
-    CFTimeInterval animationDuration = (CGRectGetWidth(_contentLayer.bounds) / _shimmeringSpeed) + _shimmeringPauseDuration;
+    CFTimeInterval animationDuration = (CGRectGetWidth(self.bounds) / _shimmeringSpeed) + _shimmeringPauseDuration;
     
     if (slideAnimation != nil) {
       // ensure existing slide animation repeats

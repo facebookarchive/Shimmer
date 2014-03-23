@@ -69,7 +69,7 @@
   _logoLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:60.0];
   _logoLabel.textColor = [UIColor whiteColor];
   _logoLabel.textAlignment = NSTextAlignmentCenter;
-  _shimmeringView.contentView = _logoLabel;
+  [_shimmeringView addSubview:_logoLabel];
   
   UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_tapped:)];
   [self.view addGestureRecognizer:tapRecognizer];
