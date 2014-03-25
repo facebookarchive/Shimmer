@@ -54,11 +54,7 @@
   _valueLabel.alpha = 0.0;
   [self.view addSubview:_valueLabel];
   
-  CGRect shimmeringFrame = self.view.bounds;
-  shimmeringFrame.origin.y = shimmeringFrame.size.height * 0.68;
-  shimmeringFrame.size.height = shimmeringFrame.size.height * 0.32;
-  
-  _shimmeringView = [[FBShimmeringView alloc] initWithFrame:shimmeringFrame];
+  _shimmeringView = [[FBShimmeringView alloc] init];
   _shimmeringView.shimmering = YES;
   _shimmeringView.shimmeringBeginFadeDuration = 0.3;
   _shimmeringView.shimmeringOpacity = 0.3;
@@ -76,6 +72,16 @@
   
   UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(_panned:)];
   [self.view addGestureRecognizer:panRecognizer];
+}
+
+- (void)viewWillLayoutSubviews
+{
+  [super viewWillLayoutSubviews];
+
+  CGRect shimmeringFrame = self.view.bounds;
+  shimmeringFrame.origin.y = shimmeringFrame.size.height * 0.68;
+  shimmeringFrame.size.height = shimmeringFrame.size.height * 0.32;
+  _shimmeringView.frame = shimmeringFrame;
 }
 
 - (void)_tapped:(UITapGestureRecognizer *)tapRecognizer

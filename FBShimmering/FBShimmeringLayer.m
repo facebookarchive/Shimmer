@@ -244,6 +244,15 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
   }
 }
 
+- (void)setBounds:(CGRect)bounds
+{
+  if (!CGRectEqualToRect(self.bounds, bounds)) {
+    [super setBounds:bounds];
+
+    [self _updateShimmering];
+  }
+}
+
 #pragma mark - Internal
 
 - (void)_clearMask
