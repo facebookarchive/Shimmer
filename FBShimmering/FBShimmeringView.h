@@ -16,7 +16,4 @@
  */
 @interface FBShimmeringView : UIView <FBShimmering>
 
-//! @abstract The content view to be shimmered.
-@property (strong, nonatomic) UIView *contentView;
-
 @end

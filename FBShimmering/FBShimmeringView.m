@@ -48,13 +48,4 @@ LAYER_ACCESSOR(shimmeringFadeTime, CFTimeInterval)
 LAYER_RW_PROPERTY(shimmeringBeginFadeDuration, setShimmeringBeginFadeDuration:, CFTimeInterval)
 LAYER_RW_PROPERTY(shimmeringEndFadeDuration, setShimmeringEndFadeDuration:, CFTimeInterval)
 
-- (void)setContentView:(UIView *)contentView
-{
-  if (contentView != _contentView) {
-    _contentView = contentView;
-    [self addSubview:contentView];
-    __layer.contentLayer = contentView.layer;
-  }
-}
-
 @end
