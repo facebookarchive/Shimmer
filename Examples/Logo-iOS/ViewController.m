@@ -52,6 +52,7 @@
   _valueLabel.textAlignment = NSTextAlignmentCenter;
   _valueLabel.numberOfLines = 0;
   _valueLabel.alpha = 0.0;
+  _valueLabel.backgroundColor = [UIColor clearColor];
   [self.view addSubview:_valueLabel];
   
   _shimmeringView = [[FBShimmeringView alloc] init];
@@ -65,6 +66,7 @@
   _logoLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:60.0];
   _logoLabel.textColor = [UIColor whiteColor];
   _logoLabel.textAlignment = NSTextAlignmentCenter;
+  _logoLabel.backgroundColor = [UIColor clearColor];
   _shimmeringView.contentView = _logoLabel;
   
   UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_tapped:)];
