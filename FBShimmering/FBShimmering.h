@@ -11,7 +11,9 @@
 
 typedef NS_ENUM(NSInteger, FBShimmerDirection) {
     FBShimmerDirectionRight,    // Shimmer animation goes from left to right
-    FBShimmerDirectionLeft      // Shimmer animation goes from right to left
+    FBShimmerDirectionLeft,     // Shimmer animation goes from right to left
+    FBShimmerDirectionUp,       // Shimmer animation goes from below to above
+    FBShimmerDirectionDown,     // Shimmer animation goes from above to below
 };
 
 @protocol FBShimmering <NSObject>
@@ -28,8 +30,11 @@ typedef NS_ENUM(NSInteger, FBShimmerDirection) {
 //! @abstract The speed of shimmering, in points per second. Defaults to 230.
 @property (assign, nonatomic, readwrite) CGFloat shimmeringSpeed;
 
-//! @abstract The highlight width of shimmering. Range of [0,1], defaults to 0.33.
-@property (assign, nonatomic, readwrite) CGFloat shimmeringHighlightWidth;
+//! @abstract The highlight length of shimmering. Range of [0,1], defaults to 0.33.
+@property (assign, nonatomic, readwrite) CGFloat shimmeringHighlightLength;
+
+//! @abstract @deprecated Same as "shimmeringHighlightLength", just for downward compatibility
+@property (assign, nonatomic, readwrite, getter = shimmeringHighlightLength, setter = setShimmeringHighlightLength:) CGFloat shimmeringHighlightWidth;
 
 //! @abstract The direction of shimmering animation. Defaults to FBShimmerDirectionRight.
 @property (assign, nonatomic, readwrite) FBShimmerDirection shimmeringDirection;
