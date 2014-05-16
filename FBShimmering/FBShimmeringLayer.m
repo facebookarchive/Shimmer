@@ -401,13 +401,13 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
       fadeOutAnimation = shimmer_begin_fade_animation(self, _maskLayer.fadeLayer, 0.0, _shimmeringBeginFadeDuration);
       [_maskLayer.fadeLayer addAnimation:fadeOutAnimation forKey:kFBFadeAnimationKey];
     } else {
-      BOOL disableActions = [CATransaction disableActions];
+      BOOL innerDisableActions = [CATransaction disableActions];
       [CATransaction setDisableActions:YES];
 
       _maskLayer.fadeLayer.opacity = 0.0;
       [_maskLayer.fadeLayer removeAllAnimations];
       
-      [CATransaction setDisableActions:disableActions];
+      [CATransaction setDisableActions:innerDisableActions];
     }
 
     // begin slide animation
