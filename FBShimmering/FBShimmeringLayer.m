@@ -301,8 +301,8 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 
   // We create a gradient to be used as a mask.
   // In a mask, the colors do not matter, it's the alpha that decides the degree of masking.
-  UIColor *maskedColor = [UIColor colorWithWhite:1.0 alpha:_baseOpacity];
-  UIColor *unmaskedColor = [UIColor colorWithWhite:1.0 alpha:_shimmeringOpacity];
+  UIColor *maskedColor = [UIColor colorWithWhite:1.0 alpha:_shimmeringOpacity];
+  UIColor *unmaskedColor = [UIColor colorWithWhite:1.0 alpha:_baseOpacity];
 
   // Create a gradient from masked to unmasked to masked.
   _maskLayer.colors = @[(__bridge id)maskedColor.CGColor, (__bridge id)unmaskedColor.CGColor, (__bridge id)maskedColor.CGColor];
