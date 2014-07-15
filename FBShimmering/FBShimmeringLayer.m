@@ -146,7 +146,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 
 @synthesize shimmering = _shimmering;
 @synthesize shimmeringPauseDuration = _shimmeringPauseDuration;
-@synthesize baseOpacity = _baseOpacity;
+@synthesize shimmeringAnimationOpacity = _shimmeringAnimationOpacity;
 @synthesize shimmeringOpacity = _shimmeringOpacity;
 @synthesize shimmeringSpeed = _shimmeringSpeed;
 @synthesize shimmeringHighlightLength = _shimmeringHighlightLength;
@@ -164,7 +164,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
     _shimmeringPauseDuration = 0.4;
     _shimmeringSpeed = 230.0;
     _shimmeringHighlightLength = 1.0;
-    _baseOpacity = 0.5;
+    _shimmeringAnimationOpacity = 0.5;
     _shimmeringOpacity = 1.0;
     _shimmeringDirection = FBShimmerDirectionRight;
     _shimmeringBeginFadeDuration = 0.1;
@@ -228,10 +228,10 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
   }
 }
 
-- (void)setBaseOpacity:(CGFloat)baseOpacity
+- (void)setShimmeringAnimationOpacity:(CGFloat)shimmeringAnimationOpacity
 {
-    if (baseOpacity != _baseOpacity) {
-        _baseOpacity = baseOpacity;
+    if (shimmeringAnimationOpacity != _shimmeringAnimationOpacity) {
+        _shimmeringAnimationOpacity = shimmeringAnimationOpacity;
         [self _updateMaskColors];
     }
 }
@@ -302,7 +302,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
   // We create a gradient to be used as a mask.
   // In a mask, the colors do not matter, it's the alpha that decides the degree of masking.
   UIColor *maskedColor = [UIColor colorWithWhite:1.0 alpha:_shimmeringOpacity];
-  UIColor *unmaskedColor = [UIColor colorWithWhite:1.0 alpha:_baseOpacity];
+  UIColor *unmaskedColor = [UIColor colorWithWhite:1.0 alpha:_shimmeringAnimationOpacity];
 
   // Create a gradient from masked to unmasked to masked.
   _maskLayer.colors = @[(__bridge id)maskedColor.CGColor, (__bridge id)unmaskedColor.CGColor, (__bridge id)maskedColor.CGColor];

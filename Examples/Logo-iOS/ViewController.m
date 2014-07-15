@@ -58,8 +58,7 @@
   _shimmeringView = [[FBShimmeringView alloc] init];
   _shimmeringView.shimmering = YES;
   _shimmeringView.shimmeringBeginFadeDuration = 0.3;
-  _shimmeringView.baseOpacity = 0.3;
-  _shimmeringView.shimmeringOpacity = 1.0;
+  _shimmeringView.shimmeringOpacity = 0.3;
   [self.view addSubview:_shimmeringView];
   
   _logoLabel = [[UILabel alloc] initWithFrame:_shimmeringView.bounds];
