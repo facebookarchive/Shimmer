@@ -82,7 +82,7 @@ static CABasicAnimation *shimmer_slide_animation(id delegate, CFTimeInterval dur
   FBShimmeringLayerAnimationApplyDragCoefficient(animation);
   if (direction == FBShimmerDirectionLeft ||
       direction == FBShimmerDirectionUp) {
-    animation.speed = -abs(animation.speed);
+    animation.speed = -fabsf(animation.speed);
   }
   return animation;
 }
@@ -93,7 +93,7 @@ static CAAnimation *shimmer_slide_repeat(CAAnimation *a, CFTimeInterval duration
   CAAnimation *anim = [a copy];
   anim.repeatCount = HUGE_VALF;
   anim.duration = duration;
-  anim.speed = (direction == FBShimmerDirectionRight || direction == FBShimmerDirectionDown) ? abs(anim.speed) : -abs(anim.speed);
+  anim.speed = (direction == FBShimmerDirectionRight || direction == FBShimmerDirectionDown) ? fabsf(anim.speed) : -fabsf(anim.speed);
   return anim;
 }
 
