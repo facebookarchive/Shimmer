@@ -246,6 +246,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 
 - (void)layoutSublayers
 {
+  [super layoutSublayers];
   CGRect r = self.bounds;
   _contentLayer.anchorPoint = CGPointMake(0.5, 0.5);
   _contentLayer.bounds = r;
