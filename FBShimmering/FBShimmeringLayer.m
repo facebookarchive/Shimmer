@@ -425,7 +425,14 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
     CAAnimation *slideAnimation = [_maskLayer animationForKey:kFBShimmerSlideAnimationKey];
     
     // compute shimmer duration
-    CFTimeInterval animationDuration = (CGRectGetWidth(_contentLayer.bounds) / _shimmeringSpeed) + _shimmeringPauseDuration;
+    CGFloat length = 0.0f;
+    if (_shimmeringDirection == FBShimmerDirectionDown ||
+        _shimmeringDirection == FBShimmerDirectionUp) {
+      length = CGRectGetHeight(_contentLayer.bounds);
+    } else {
+      length = CGRectGetWidth(_contentLayer.bounds);
+    }
+    CFTimeInterval animationDuration = (length / _shimmeringSpeed) + _shimmeringPauseDuration;
     
     if (slideAnimation != nil) {
       // ensure existing slide animation repeats
