@@ -36,6 +36,10 @@ Shimmer requires iOS 6 or later.
 ## How it works
 Shimmer uses the `-[CALayer mask]` property to enable shimmering, similar to what's described in John Harper's 2009 WWDC talk (unfortunately no longer online). Shimmer uses CoreAnimation's timing features to smoothly transition "on-beat" when starting and stopping the shimmer.
 
+## Other Platforms
+
+We have a version of Shimmer for Android, too! It's [also available on GitHub](https://github.com/facebook/shimmer-android).
+
 ## Contributing
 See the CONTRIBUTING file for how to help out.
 
