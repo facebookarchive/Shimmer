@@ -54,5 +54,18 @@ typedef NS_ENUM(NSInteger, FBShimmerDirection) {
  */
 @property (assign, nonatomic, readonly) CFTimeInterval shimmeringFadeTime;
 
+/**
+ @abstract The absolute CoreAnimation media time when the shimmer will begin.
+ @discussion Only valid after setting {@ref shimmering} to YES.
+ */
+@property (assign, nonatomic, readonly) CFTimeInterval shimmeringBeginTime;
+
+/**
+ @abstract Used to synchronize two different shimmers. Pass the value of {@ref shimmeringBeginTime} from another shimmer
+           into this method.
+ @discussion Only works after fully configuring the shimmer and after setting {@ref shimmering} to YES.
+ */
+- (void)resumeShimmeringWithBeginTime:(CFTimeInterval)beginTime;
+
 @end
 
