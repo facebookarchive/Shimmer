@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, FBShimmerDirection) {
 @protocol FBShimmering <NSObject>
 
 //! @abstract Set this to YES to start shimming and NO to stop. Defaults to NO.
-@property (nonatomic, assign, readwrite, getter = isShimmering) BOOL shimmering;
+@property (assign, nonatomic, readwrite, getter = isShimmering) BOOL shimmering;
 
 //! @abstract The time interval between shimmerings in seconds. Defaults to 0.4.
 @property (assign, nonatomic, readwrite) CFTimeInterval shimmeringPauseDuration;

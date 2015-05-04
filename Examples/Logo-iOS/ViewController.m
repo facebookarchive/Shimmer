@@ -97,7 +97,11 @@
   CGPoint velocity = [panRecognizer velocityInView:self.view];
   
   if (panRecognizer.state == UIGestureRecognizerStateBegan) {
-    _panVertical = (fabsf(velocity.y) > fabsf(velocity.x));
+#if CGFLOAT_IS_DOUBLE
+      _panVertical = (fabs(velocity.y) > fabs(velocity.x));
+#else
+      _panVertical = (fabsf(velocity.y) > fabsf(velocity.x));
+#endif
     
     if (_panVertical) {
       _panStartValue = _shimmeringView.shimmeringSpeed;
