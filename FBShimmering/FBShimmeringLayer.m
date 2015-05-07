@@ -244,6 +244,22 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
   }
 }
 
+- (CFTimeInterval)shimmeringBeginTime
+{
+  return [_maskLayer animationForKey:kFBShimmerSlideAnimationKey].beginTime;
+}
+
+- (void)setShimmeringBeginTime:(CFTimeInterval)beginTime
+{
+  CAAnimation *slideAnimation = [[_maskLayer animationForKey:kFBShimmerSlideAnimationKey] mutableCopy];
+  if (nil == slideAnimation) {
+    return;
+  }
+
+  slideAnimation.beginTime = beginTime;
+  [_maskLayer addAnimation:slideAnimation forKey:kFBShimmerSlideAnimationKey];
+}
+
 - (void)layoutSublayers
 {
   [super layoutSublayers];
