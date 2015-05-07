@@ -17,6 +17,8 @@ typedef NS_ENUM(NSInteger, FBShimmerDirection) {
     FBShimmerDirectionDown,     // Shimmer animation goes from above to below
 };
 
+static const float FBShimmerDefaultBeginTime = CGFLOAT_MAX;
+
 @protocol FBShimmering <NSObject>
 
 //! @abstract Set this to YES to start shimming and NO to stop. Defaults to NO.

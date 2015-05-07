@@ -47,8 +47,6 @@ static NSString *const kFBShimmerSlideAnimationKey = @"slide";
 static NSString *const kFBFadeAnimationKey = @"fade";
 static NSString *const kFBEndFadeAnimationKey = @"fade-end";
 
-static const float FBShimmerDefaultBeginTime = CGFLOAT_MAX;
-
 static CABasicAnimation *fade_animation(id delegate, CALayer *layer, CGFloat opacity, CFTimeInterval duration)
 {
   CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
