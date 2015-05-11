@@ -453,11 +453,11 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
       slideAnimation = shimmer_slide_animation(self, animationDuration, _shimmeringDirection);
       slideAnimation.fillMode = kCAFillModeForwards;
       slideAnimation.removedOnCompletion = NO;
-      if (_shimmeringBeginTime != FBShimmerDefaultBeginTime) {
-        slideAnimation.beginTime = _shimmeringBeginTime;
-      } else {
-        slideAnimation.beginTime = CACurrentMediaTime() + fadeOutAnimation.duration;
+      if (_shimmeringBeginTime == FBShimmerDefaultBeginTime) {
+        _shimmeringBeginTime = CACurrentMediaTime() + fadeOutAnimation.duration;
       }
+      slideAnimation.beginTime = _shimmeringBeginTime;
+      
       [_maskLayer addAnimation:slideAnimation forKey:kFBShimmerSlideAnimationKey];
     }
   }
