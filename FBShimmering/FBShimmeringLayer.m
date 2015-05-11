@@ -154,6 +154,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 @synthesize shimmeringFadeTime = _shimmeringFadeTime;
 @synthesize shimmeringBeginFadeDuration = _shimmeringBeginFadeDuration;
 @synthesize shimmeringEndFadeDuration = _shimmeringEndFadeDuration;
+@synthesize shimmeringBeginTime = _shimmeringBeginTime;
 @dynamic shimmeringHighlightWidth;
 
 - (instancetype)init
@@ -169,6 +170,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
     _shimmeringDirection = FBShimmerDirectionRight;
     _shimmeringBeginFadeDuration = 0.1;
     _shimmeringEndFadeDuration = 0.3;
+    _shimmeringBeginTime = FBShimmerDefaultBeginTime;
   }
   return self;
 }
@@ -241,6 +243,14 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
   if (shimmeringOpacity != _shimmeringOpacity) {
     _shimmeringOpacity = shimmeringOpacity;
     [self _updateMaskColors];
+  }
+}
+
+- (void)setShimmeringBeginTime:(CFTimeInterval)beginTime
+{
+  if (beginTime != _shimmeringBeginTime) {
+    _shimmeringBeginTime = beginTime;
+    [self _updateShimmering];
   }
 }
 
@@ -379,6 +389,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 
       CAAnimation *slideAnimation = [_maskLayer animationForKey:kFBShimmerSlideAnimationKey];
       if (slideAnimation != nil) {
+
         // determing total time sliding
         CFTimeInterval now = CACurrentMediaTime();
         CFTimeInterval slideTotalDuration = now - slideAnimation.beginTime;
@@ -442,7 +453,11 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
       slideAnimation = shimmer_slide_animation(self, animationDuration, _shimmeringDirection);
       slideAnimation.fillMode = kCAFillModeForwards;
       slideAnimation.removedOnCompletion = NO;
-      slideAnimation.beginTime = CACurrentMediaTime() + fadeOutAnimation.duration;
+      if (_shimmeringBeginTime == FBShimmerDefaultBeginTime) {
+        _shimmeringBeginTime = CACurrentMediaTime() + fadeOutAnimation.duration;
+      }
+      slideAnimation.beginTime = _shimmeringBeginTime;
+      
       [_maskLayer addAnimation:slideAnimation forKey:kFBShimmerSlideAnimationKey];
     }
   }
