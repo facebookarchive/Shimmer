@@ -269,9 +269,10 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 
 - (void)setBounds:(CGRect)bounds
 {
+  CGRect oldBounds = bounds;
   [super setBounds:bounds];
  
-  if (!CGRectEqualToRect(self.bounds, bounds)) {
+  if (!CGRectEqualToRect(oldBounds, bounds)) {
     [self _updateShimmering];
   }
 }
