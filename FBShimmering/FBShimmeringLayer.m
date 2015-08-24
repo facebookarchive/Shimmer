@@ -47,10 +47,9 @@ static NSString *const kFBShimmerSlideAnimationKey = @"slide";
 static NSString *const kFBFadeAnimationKey = @"fade";
 static NSString *const kFBEndFadeAnimationKey = @"fade-end";
 
-static CABasicAnimation *fade_animation(id delegate, CALayer *layer, CGFloat opacity, CFTimeInterval duration)
+static CABasicAnimation *fade_animation(CALayer *layer, CGFloat opacity, CFTimeInterval duration)
 {
   CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-  animation.delegate = delegate;
   animation.fromValue = @([(layer.presentationLayer ?: layer) opacity]);
   animation.toValue = @(opacity);
   animation.fillMode = kCAFillModeBoth;
@@ -60,22 +59,9 @@ static CABasicAnimation *fade_animation(id delegate, CALayer *layer, CGFloat opa
   return animation;
 }
 
-static CABasicAnimation *shimmer_begin_fade_animation(id delegate, CALayer *layer, CGFloat opacity, CGFloat duration)
-{
-  return fade_animation(delegate, layer, opacity, duration);
-}
-
-static CABasicAnimation *shimmer_end_fade_animation(id delegate, CALayer *layer, CGFloat opacity, CGFloat duration)
-{
-  CABasicAnimation *animation = fade_animation(delegate, layer, opacity, duration);
-  [animation setValue:@YES forKey:kFBEndFadeAnimationKey];
-  return animation;
-}
-
-static CABasicAnimation *shimmer_slide_animation(id delegate, CFTimeInterval duration, FBShimmerDirection direction)
+static CABasicAnimation *shimmer_slide_animation(CFTimeInterval duration, FBShimmerDirection direction)
 {
   CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
-  animation.delegate = delegate;
   animation.toValue = [NSValue valueWithCGPoint:CGPointZero];
   animation.duration = duration;
   animation.repeatCount = HUGE_VALF;
@@ -410,7 +396,9 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
       }
 
       // fade in text at slideEndTime
-      CABasicAnimation *fadeInAnimation = shimmer_end_fade_animation(self, _maskLayer.fadeLayer, 1.0, _shimmeringEndFadeDuration);
+      CABasicAnimation *fadeInAnimation = fade_animation(_maskLayer.fadeLayer, 1.0, _shimmeringEndFadeDuration);
+      fadeInAnimation.delegate = self;
+      [fadeInAnimation setValue:@YES forKey:kFBEndFadeAnimationKey];
       fadeInAnimation.beginTime = slideEndTime;
       [_maskLayer.fadeLayer addAnimation:fadeInAnimation forKey:kFBFadeAnimationKey];
 
@@ -421,7 +409,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
     // fade out text, optionally animated
     CABasicAnimation *fadeOutAnimation = nil;
     if (_shimmeringBeginFadeDuration > 0.0 && !disableActions) {
-      fadeOutAnimation = shimmer_begin_fade_animation(self, _maskLayer.fadeLayer, 0.0, _shimmeringBeginFadeDuration);
+      fadeOutAnimation = fade_animation(_maskLayer.fadeLayer, 0.0, _shimmeringBeginFadeDuration);
       [_maskLayer.fadeLayer addAnimation:fadeOutAnimation forKey:kFBFadeAnimationKey];
     } else {
       BOOL innerDisableActions = [CATransaction disableActions];
@@ -451,7 +439,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
       [_maskLayer addAnimation:shimmer_slide_repeat(slideAnimation, animationDuration, _shimmeringDirection) forKey:kFBShimmerSlideAnimationKey];
     } else {
       // add slide animation
-      slideAnimation = shimmer_slide_animation(self, animationDuration, _shimmeringDirection);
+      slideAnimation = shimmer_slide_animation(animationDuration, _shimmeringDirection);
       slideAnimation.fillMode = kCAFillModeForwards;
       slideAnimation.removedOnCompletion = NO;
       if (_shimmeringBeginTime == FBShimmerDefaultBeginTime) {
