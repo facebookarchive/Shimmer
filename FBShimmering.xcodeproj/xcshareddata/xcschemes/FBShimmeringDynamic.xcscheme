@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ECEA60FD18A49C620064AFF4"
-               BuildableName = "libFBShimmering.a"
-               BlueprintName = "FBShimmering"
+               BlueprintIdentifier = "C74AEDCC1BC6D02700E87325"
+               BuildableName = "FBShimmeringDynamic.framework"
+               BlueprintName = "FBShimmeringDynamic"
                ReferencedContainer = "container:FBShimmering.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ECEA60FD18A49C620064AFF4"
-            BuildableName = "libFBShimmering.a"
-            BlueprintName = "FBShimmering"
+            BlueprintIdentifier = "C74AEDCC1BC6D02700E87325"
+            BuildableName = "FBShimmeringDynamic.framework"
+            BlueprintName = "FBShimmeringDynamic"
             ReferencedContainer = "container:FBShimmering.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ECEA60FD18A49C620064AFF4"
-            BuildableName = "libFBShimmering.a"
-            BlueprintName = "FBShimmering"
+            BlueprintIdentifier = "C74AEDCC1BC6D02700E87325"
+            BuildableName = "FBShimmeringDynamic.framework"
+            BlueprintName = "FBShimmeringDynamic"
             ReferencedContainer = "container:FBShimmering.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
