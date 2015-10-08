@@ -1,4 +1,4 @@
-# Shimmer
+# Shimmer [![Shimmer compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/facebook/Shimmer)
 Shimmer is an easy way to add a shimmering effect to any view in your app. It's useful as an unobtrusive loading indicator.
 
 Shimmer was originally developed to show loading status in [Paper](http://facebook.com/paper).
