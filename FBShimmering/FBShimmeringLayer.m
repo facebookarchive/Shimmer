@@ -465,6 +465,8 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
   if (flag && [[anim valueForKey:kFBEndFadeAnimationKey] boolValue]) {
+    [_maskLayer.fadeLayer removeAnimationForKey:kFBFadeAnimationKey];
+
     [self _clearMask];
   }
 }
