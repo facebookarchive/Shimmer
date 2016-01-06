@@ -33,7 +33,6 @@
 		CECA743F1C3D1C1700431EF8 /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1899D26718BD1CFB0035A1B0 /* FBShimmeringView.m */; };
 		CECA74401C3D1C1700431EF8 /* FBShimmeringLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1899D26A18BD1CFB0035A1B0 /* FBShimmeringLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CECA74411C3D1C1700431EF8 /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1899D26918BD1CFB0035A1B0 /* FBShimmeringLayer.m */; };
-		CECA74451C3D1F8400431EF8 /* Shimmer-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = CECA74441C3D1F1000431EF8 /* Shimmer-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECEA610218A49C620064AFF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEA610118A49C620064AFF4 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +71,6 @@
 		CECA74331C3D199800431EF8 /* Shimmer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shimmer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECA74351C3D199800431EF8 /* Shimmer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shimmer.h; sourceTree = "<group>"; };
 		CECA74371C3D199800431EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CECA74441C3D1F1000431EF8 /* Shimmer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Shimmer-Bridging-Header.h"; sourceTree = "<group>"; };
 		EC8BB5B318A5A1EE00EB2793 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		EC8BB5B418A5A1F500EB2793 /* PATENTS */ = {isa = PBXFileReference; lastKnownFileType = text; path = PATENTS; sourceTree = "<group>"; };
 		EC8BB5B518A5A30700EB2793 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = CONTRIBUTING.md; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 			children = (
 				CECA74351C3D199800431EF8 /* Shimmer.h */,
 				CECA74371C3D199800431EF8 /* Info.plist */,
-				CECA74441C3D1F1000431EF8 /* Shimmer-Bridging-Header.h */,
 			);
 			path = Shimmer;
 			sourceTree = "<group>";
@@ -175,7 +172,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECA74451C3D1F8400431EF8 /* Shimmer-Bridging-Header.h in Headers */,
 				CECA743E1C3D1C1700431EF8 /* FBShimmeringView.h in Headers */,
 				CECA74401C3D1C1700431EF8 /* FBShimmeringLayer.h in Headers */,
 				CECA74361C3D199800431EF8 /* Shimmer.h in Headers */,
