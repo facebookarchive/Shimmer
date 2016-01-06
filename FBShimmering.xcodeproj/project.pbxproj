@@ -28,10 +28,10 @@
 		1899D27518BD201B0035A1B0 /* FBShimmeringView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1899D26818BD1CFB0035A1B0 /* FBShimmeringView.h */; };
 		1899D27618BD201B0035A1B0 /* FBShimmeringLayer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1899D26A18BD1CFB0035A1B0 /* FBShimmeringLayer.h */; };
 		CECA74361C3D199800431EF8 /* Shimmer.h in Headers */ = {isa = PBXBuildFile; fileRef = CECA74351C3D199800431EF8 /* Shimmer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CECA743D1C3D1C1700431EF8 /* FBShimmering.h in Headers */ = {isa = PBXBuildFile; fileRef = 1899D26D18BD1D070035A1B0 /* FBShimmering.h */; };
-		CECA743E1C3D1C1700431EF8 /* FBShimmeringView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1899D26818BD1CFB0035A1B0 /* FBShimmeringView.h */; };
+		CECA743D1C3D1C1700431EF8 /* FBShimmering.h in Headers */ = {isa = PBXBuildFile; fileRef = 1899D26D18BD1D070035A1B0 /* FBShimmering.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CECA743E1C3D1C1700431EF8 /* FBShimmeringView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1899D26818BD1CFB0035A1B0 /* FBShimmeringView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CECA743F1C3D1C1700431EF8 /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1899D26718BD1CFB0035A1B0 /* FBShimmeringView.m */; };
-		CECA74401C3D1C1700431EF8 /* FBShimmeringLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1899D26A18BD1CFB0035A1B0 /* FBShimmeringLayer.h */; };
+		CECA74401C3D1C1700431EF8 /* FBShimmeringLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1899D26A18BD1CFB0035A1B0 /* FBShimmeringLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CECA74411C3D1C1700431EF8 /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1899D26918BD1CFB0035A1B0 /* FBShimmeringLayer.m */; };
 		ECEA610218A49C620064AFF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEA610118A49C620064AFF4 /* Foundation.framework */; };
 /* End PBXBuildFile section */
