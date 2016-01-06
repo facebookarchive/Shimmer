@@ -1,4 +1,4 @@
-Note : This repository it's a simple fork of [Facebook/Shimmer](https://github.com/facebook/Shimmer) with carthage support
+Note : This repository is a simple fork of [Facebook/Shimmer](https://github.com/facebook/Shimmer) with carthage support
 
 # Shimmer
 
@@ -27,7 +27,7 @@ github "PoissonBallon/Shimmer"
 
 Run `carthage update --platform ios` to build the framework and drag the built `Shimmer.framework` into your Xcode project.
 
-Note : Other platform possibly work but not tested  
+Note: Other platform may work but not tested  
 
 
 ## Usage
@@ -38,7 +38,7 @@ import Shimmer
 let lShimer = FBShimmeringView(frame: CGRectMake(0, 0, 200, 200))
 self.contentView.addSubview(lShimer)
 let lLabel = UILabel(frame: lShimer.bounds)
-lLabel.text = "I am the doctor"
+lLabel.text = "I am the Doctor"
 lShimer.contentView = lLabel
 lShimer.shimmering = true
 
