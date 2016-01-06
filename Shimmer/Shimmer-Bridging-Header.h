@@ -9,9 +9,9 @@
 #ifndef Shimmer_Bridging_Header_h
 #define Shimmer_Bridging_Header_h
 
-#import "Shimmer.h"
-#import "FBShimmering.h"
-#import "FBShimmeringView.h"
-#import "FBShimmeringLayer.h"
+#import <Shimmer.h>
+#import <FBShimmering.h>
+#import <FBShimmeringView.h>
+#import <FBShimmeringLayer.h>
 
 #endif /* Shimmer_Bridging_Header_h */

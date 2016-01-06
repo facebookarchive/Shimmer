@@ -1,48 +1,45 @@
+Note : This repository it's a simple fork of [Facebook/Shimmer](https://github.com/facebook/Shimmer) with carthage support
+
 # Shimmer
+
 Shimmer is an easy way to add a shimmering effect to any view in your app. It's useful as an unobtrusive loading indicator.
 
 Shimmer was originally developed to show loading status in [Paper](http://facebook.com/paper).
 
 ![Shimmer](https://github.com/facebook/Shimmer/blob/master/shimmer.gif?raw=true)
 
-## Usage
-To use Shimmer, create a `FBShimmeringView` or `FBShimmeringLayer` and add your content. To start shimmering, set the `shimmering` property to `YES`.
+## Carthage
 
-An example of making a label shimmer:
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
 
-```objective-c
-FBShimmeringView *shimmeringView = [[FBShimmeringView alloc] initWithFrame:self.view.bounds];
-[self.view addSubview:shimmeringView];
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
 
-UILabel *loadingLabel = [[UILabel alloc] initWithFrame:shimmeringView.bounds];
-loadingLabel.textAlignment = NSTextAlignmentCenter;
-loadingLabel.text = NSLocalizedString(@"Shimmer", nil);
-shimmeringView.contentView = loadingLabel;
-
-// Start shimmering.
-shimmeringView.shimmering = YES;
+```bash
+$ brew update
+$ brew install carthage
 ```
 
-There's also an example project. In the example, you can swipe horizontally and vertically to try various shimmering parameters, or tap to start or stop shimmering. (To build the example locally, you'll need to open `FBShimmering.xcworkpace` rather than the `.xcodeproj`.)
+To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
 
-## Installation
-There are two options:
+```ogdl
+github "PoissonBallon/Shimmer"
+```
 
- 1. Shimmer is available as `Shimmer` in [Cocoapods](http://cocoapods.org).
- 2. Manually add the files into your Xcode project. Slightly simpler, but updates are also manual.
+Run `carthage update --platform ios` to build the framework and drag the built `Alamofire.framework` into your Xcode project.
 
-Shimmer requires iOS 6 or later.
+Note : Other platform possibly work but not tested  
 
-## How it works
-Shimmer uses the `-[CALayer mask]` property to enable shimmering, similar to what's described in John Harper's 2009 WWDC talk (unfortunately no longer online). Shimmer uses CoreAnimation's timing features to smoothly transition "on-beat" when starting and stopping the shimmer.
 
-## Other Platforms
+## Usage
 
-We have a version of Shimmer for Android, too! It's [also available on GitHub](https://github.com/facebook/shimmer-android).
+```swift
+import Alamofire
 
-## Contributing
+Alamofire.request(.GET, "https://httpbin.org/get")
+```
+
+## Licence and Contributing
+
 See the CONTRIBUTING file for how to help out.
 
-## License
 Shimmer is BSD-licensed. We also provide an additional patent grant.
-
