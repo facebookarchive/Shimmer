@@ -33,9 +33,15 @@ Note : Other platform possibly work but not tested
 ## Usage
 
 ```swift
-import Alamofire
+import Shimmer
 
-Alamofire.request(.GET, "https://httpbin.org/get")
+let lShimer = FBShimmeringView(frame: CGRectMake(0, 0, 200, 200))
+self.contentView.addSubview(lShimer)
+let lLabel = UILabel(frame: lShimer.bounds)
+lLabel.text = "I am the doctor"
+lShimer.contentView = lLabel
+lShimer.shimmering = true
+
 ```
 
 ## Licence and Contributing
