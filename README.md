@@ -1,51 +1,48 @@
-Note : This repository is a simple fork of [Facebook/Shimmer](https://github.com/facebook/Shimmer) with carthage support
-
 # Shimmer
-
 Shimmer is an easy way to add a shimmering effect to any view in your app. It's useful as an unobtrusive loading indicator.
 
 Shimmer was originally developed to show loading status in [Paper](http://facebook.com/paper).
 
 ![Shimmer](https://github.com/facebook/Shimmer/blob/master/shimmer.gif?raw=true)
 
-## Carthage
-
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
-
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
-
-```bash
-$ brew update
-$ brew install carthage
-```
-
-To integrate Shimmer into your Xcode project using Carthage, specify it in your `Cartfile`:
-
-```ogdl
-github "PoissonBallon/Shimmer"
-```
-
-Run `carthage update --platform ios` to build the framework and drag the built `Shimmer.framework` into your Xcode project.
-
-Note: Other platform may work but not tested  
-
-
 ## Usage
+To use Shimmer, create a `FBShimmeringView` or `FBShimmeringLayer` and add your content. To start shimmering, set the `shimmering` property to `YES`.
 
-```swift
-import Shimmer
+An example of making a label shimmer:
 
-let lShimer = FBShimmeringView(frame: CGRectMake(0, 0, 200, 200))
-self.contentView.addSubview(lShimer)
-let lLabel = UILabel(frame: lShimer.bounds)
-lLabel.text = "I am the Doctor"
-lShimer.contentView = lLabel
-lShimer.shimmering = true
+```objective-c
+FBShimmeringView *shimmeringView = [[FBShimmeringView alloc] initWithFrame:self.view.bounds];
+[self.view addSubview:shimmeringView];
 
+UILabel *loadingLabel = [[UILabel alloc] initWithFrame:shimmeringView.bounds];
+loadingLabel.textAlignment = NSTextAlignmentCenter;
+loadingLabel.text = NSLocalizedString(@"Shimmer", nil);
+shimmeringView.contentView = loadingLabel;
+
+// Start shimmering.
+shimmeringView.shimmering = YES;
 ```
 
-## Licence and Contributing
+There's also an example project. In the example, you can swipe horizontally and vertically to try various shimmering parameters, or tap to start or stop shimmering. (To build the example locally, you'll need to open `FBShimmering.xcworkpace` rather than the `.xcodeproj`.)
 
+## Installation
+There are two options:
+
+ 1. Shimmer is available as `Shimmer` in [Cocoapods](http://cocoapods.org).
+ 2. Shimmer is available as `github "facebook/Shimmer"` in [Carthage](https://github.com/Carthage/Carthage).
+ 3. Manually add the files into your Xcode project. Slightly simpler, but updates are also manual.
+
+Shimmer requires iOS 6 or later.
+
+## How it works
+Shimmer uses the `-[CALayer mask]` property to enable shimmering, similar to what's described in John Harper's 2009 WWDC talk (unfortunately no longer online). Shimmer uses CoreAnimation's timing features to smoothly transition "on-beat" when starting and stopping the shimmer.
+
+## Other Platforms
+
+We have a version of Shimmer for Android, too! It's [also available on GitHub](https://github.com/facebook/shimmer-android).
+
+## Contributing
 See the CONTRIBUTING file for how to help out.
 
+## License
 Shimmer is BSD-licensed. We also provide an additional patent grant.
