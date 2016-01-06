@@ -19,13 +19,13 @@ $ brew update
 $ brew install carthage
 ```
 
-To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
+To integrate Shimmer into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
 github "PoissonBallon/Shimmer"
 ```
 
-Run `carthage update --platform ios` to build the framework and drag the built `Alamofire.framework` into your Xcode project.
+Run `carthage update --platform ios` to build the framework and drag the built `Shimmer.framework` into your Xcode project.
 
 Note : Other platform possibly work but not tested  
 
