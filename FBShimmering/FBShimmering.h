@@ -39,8 +39,8 @@ static const float FBShimmerDefaultBeginTime = CGFLOAT_MAX;
 //! @abstract The highlight length of shimmering. Range of [0,1], defaults to 1.0.
 @property (assign, nonatomic, readwrite) CGFloat shimmeringHighlightLength;
 
-//! @abstract @deprecated Same as "shimmeringHighlightLength", just for downward compatibility
-@property (assign, nonatomic, readwrite, getter = shimmeringHighlightLength, setter = setShimmeringHighlightLength:) CGFloat shimmeringHighlightWidth;
+//! @abstract Same as "shimmeringHighlightLength", just for downward compatibility @deprecated
+@property (assign, nonatomic, readwrite, getter = shimmeringHighlightLength, setter = setShimmeringHighlightLength:) CGFloat shimmeringHighlightWidth DEPRECATED_MSG_ATTRIBUTE("Use shimmeringHighlightLength");
 
 //! @abstract The direction of shimmering animation. Defaults to FBShimmerDirectionRight.
 @property (assign, nonatomic, readwrite) FBShimmerDirection shimmeringDirection;
