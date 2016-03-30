@@ -29,7 +29,8 @@ There's also an example project. In the example, you can swipe horizontally and 
 There are two options:
 
  1. Shimmer is available as `Shimmer` in [Cocoapods](http://cocoapods.org).
- 2. Manually add the files into your Xcode project. Slightly simpler, but updates are also manual.
+ 2. Shimmer is available as `github "facebook/Shimmer"` in [Carthage](https://github.com/Carthage/Carthage).
+ 3. Manually add the files into your Xcode project. Slightly simpler, but updates are also manual.
 
 Shimmer requires iOS 6 or later.
 
@@ -45,4 +46,3 @@ See the CONTRIBUTING file for how to help out.
 
 ## License
 Shimmer is BSD-licensed. We also provide an additional patent grant.
-
