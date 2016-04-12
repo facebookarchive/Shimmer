@@ -222,6 +222,7 @@
 		EC45CAC418ADC7920063DD11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
@@ -229,6 +230,7 @@
 		EC45CAC518ADC7920063DD11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Release;
 		};
