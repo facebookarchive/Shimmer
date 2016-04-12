@@ -19,7 +19,6 @@
 {
   UIImageView *_wallpaperView;
   FBShimmeringView *_shimmeringView;
-  UIView *_contentView;
   UILabel *_logoLabel;
   
   UILabel *_valueLabel;
@@ -98,9 +97,9 @@
   
   if (panRecognizer.state == UIGestureRecognizerStateBegan) {
 #if CGFLOAT_IS_DOUBLE
-      _panVertical = (fabs(velocity.y) > fabs(velocity.x));
+    _panVertical = (fabs(velocity.y) > fabs(velocity.x));
 #else
-      _panVertical = (fabsf(velocity.y) > fabsf(velocity.x));
+    _panVertical = (fabsf(velocity.y) > fabsf(velocity.x));
 #endif
     
     if (_panVertical) {

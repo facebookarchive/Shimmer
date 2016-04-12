@@ -218,10 +218,10 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 
 - (void)setShimmeringAnimationOpacity:(CGFloat)shimmeringAnimationOpacity
 {
-    if (shimmeringAnimationOpacity != _shimmeringAnimationOpacity) {
-        _shimmeringAnimationOpacity = shimmeringAnimationOpacity;
-        [self _updateMaskColors];
-    }
+  if (shimmeringAnimationOpacity != _shimmeringAnimationOpacity) {
+    _shimmeringAnimationOpacity = shimmeringAnimationOpacity;
+    [self _updateMaskColors];
+  }
 }
 
 - (void)setShimmeringOpacity:(CGFloat)shimmeringOpacity
@@ -311,7 +311,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
   // Everything outside the mask layer is hidden, so we need to create a mask long enough for the shimmered layer to be always covered by the mask.
   CGFloat length = 0.0f;
   if (_shimmeringDirection == FBShimmerDirectionDown ||
-    _shimmeringDirection == FBShimmerDirectionUp) {
+      _shimmeringDirection == FBShimmerDirectionUp) {
     length = CGRectGetHeight(_contentLayer.bounds);
   } else {
     length = CGRectGetWidth(_contentLayer.bounds);
