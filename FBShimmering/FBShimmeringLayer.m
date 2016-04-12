@@ -362,7 +362,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
     return;
   }
 
-  // ensure layed out
+  // ensure layout
   [self layoutIfNeeded];
 
   BOOL disableActions = [CATransaction disableActions];
@@ -377,7 +377,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
       CAAnimation *slideAnimation = [_maskLayer animationForKey:kFBShimmerSlideAnimationKey];
       if (slideAnimation != nil) {
 
-        // determing total time sliding
+        // determine total time sliding
         CFTimeInterval now = CACurrentMediaTime();
         CFTimeInterval slideTotalDuration = now - slideAnimation.beginTime;
 
