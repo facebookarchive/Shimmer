@@ -21,11 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		077ACA6D1CBD6B7200B3A708 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		077ACA6D1CBD6B7200B3A708 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EC45CACA18ADC7CE0063DD11 /* Logo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Logo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC45CACD18ADC7CE0063DD11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC45CACF18ADC7CE0063DD11 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		EC45CAD118ADC7CE0063DD11 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		EC45CAD518ADC7CE0063DD11 /* Logo-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Logo-iOS-Info.plist"; sourceTree = "<group>"; };
 		EC45CAD718ADC7CE0063DD11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EC45CAD918ADC7CE0063DD11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,11 +76,10 @@
 		EC45CACC18ADC7CE0063DD11 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				077ACA6D1CBD6B7200B3A708 /* UIKit.framework */,
 				EC45CB0318ADC7E80063DD11 /* libFBShimmering.a */,
 				EC45CACD18ADC7CE0063DD11 /* Foundation.framework */,
 				EC45CACF18ADC7CE0063DD11 /* CoreGraphics.framework */,
-				EC45CAD118ADC7CE0063DD11 /* UIKit.framework */,
+				077ACA6D1CBD6B7200B3A708 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
