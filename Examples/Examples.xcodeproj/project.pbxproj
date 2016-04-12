@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		077ACA6E1CBD6B7200B3A708 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077ACA6D1CBD6B7200B3A708 /* UIKit.framework */; };
 		EC45CACE18ADC7CE0063DD11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC45CACD18ADC7CE0063DD11 /* Foundation.framework */; };
 		EC45CAD018ADC7CE0063DD11 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC45CACF18ADC7CE0063DD11 /* CoreGraphics.framework */; };
-		EC45CAD218ADC7CE0063DD11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC45CAD118ADC7CE0063DD11 /* UIKit.framework */; };
 		EC45CAD818ADC7CE0063DD11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC45CAD618ADC7CE0063DD11 /* InfoPlist.strings */; };
 		EC45CADA18ADC7CE0063DD11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC45CAD918ADC7CE0063DD11 /* main.m */; };
 		EC45CADE18ADC7CE0063DD11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC45CADD18ADC7CE0063DD11 /* AppDelegate.m */; };
@@ -21,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		077ACA6D1CBD6B7200B3A708 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		EC45CACA18ADC7CE0063DD11 /* Logo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Logo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC45CACD18ADC7CE0063DD11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC45CACF18ADC7CE0063DD11 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -36,12 +37,7 @@
 		EC45CAE518ADC7CE0063DD11 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		EC45CAE618ADC7CE0063DD11 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EC45CAE818ADC7CE0063DD11 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		EC45CAEF18ADC7CE0063DD11 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EC45CB0318ADC7E80063DD11 /* libFBShimmering.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFBShimmering.a; path = "../../../Library/Developer/Xcode/DerivedData/FBShimmering-amnevtoymcgzwwazjmzbwvbeduoi/Build/Products/Debug-iphoneos/libFBShimmering.a"; sourceTree = "<group>"; };
-		EC45CB0A18ADC8570063DD11 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		EC45CB0D18ADC8570063DD11 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		EC45CB0E18ADC8570063DD11 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		EC45CB0F18ADC8570063DD11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,9 +45,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				077ACA6E1CBD6B7200B3A708 /* UIKit.framework in Frameworks */,
 				EC45CB0418ADC7E80063DD11 /* libFBShimmering.a in Frameworks */,
 				EC45CAD018ADC7CE0063DD11 /* CoreGraphics.framework in Frameworks */,
-				EC45CAD218ADC7CE0063DD11 /* UIKit.framework in Frameworks */,
 				EC45CACE18ADC7CE0063DD11 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,7 +62,9 @@
 				EC45CACC18ADC7CE0063DD11 /* Frameworks */,
 				EC45CACB18ADC7CE0063DD11 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		EC45CACB18ADC7CE0063DD11 /* Products */ = {
 			isa = PBXGroup;
@@ -79,13 +77,11 @@
 		EC45CACC18ADC7CE0063DD11 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				077ACA6D1CBD6B7200B3A708 /* UIKit.framework */,
 				EC45CB0318ADC7E80063DD11 /* libFBShimmering.a */,
 				EC45CACD18ADC7CE0063DD11 /* Foundation.framework */,
 				EC45CACF18ADC7CE0063DD11 /* CoreGraphics.framework */,
 				EC45CAD118ADC7CE0063DD11 /* UIKit.framework */,
-				EC45CAEF18ADC7CE0063DD11 /* XCTest.framework */,
-				EC45CB0A18ADC8570063DD11 /* Cocoa.framework */,
-				EC45CB0C18ADC8570063DD11 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,16 +110,6 @@
 				EC45CADB18ADC7CE0063DD11 /* Logo-iOS-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		EC45CB0C18ADC8570063DD11 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EC45CB0D18ADC8570063DD11 /* AppKit.framework */,
-				EC45CB0E18ADC8570063DD11 /* CoreData.framework */,
-				EC45CB0F18ADC8570063DD11 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		ECC5761518ADEDFC00C2BFB8 /* Logo */ = {

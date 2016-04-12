@@ -22,6 +22,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		077ACA6A1CBD6B4300B3A708 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077ACA691CBD6B4300B3A708 /* UIKit.framework */; };
+		077ACA6C1CBD6B5800B3A708 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077ACA6B1CBD6B5800B3A708 /* CoreGraphics.framework */; };
 		1899D26B18BD1CFB0035A1B0 /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1899D26718BD1CFB0035A1B0 /* FBShimmeringView.m */; };
 		1899D26C18BD1CFB0035A1B0 /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1899D26918BD1CFB0035A1B0 /* FBShimmeringLayer.m */; };
 		1899D27418BD201B0035A1B0 /* FBShimmering.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1899D26D18BD1D070035A1B0 /* FBShimmering.h */; };
@@ -56,12 +58,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		077ACA691CBD6B4300B3A708 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		077ACA6B1CBD6B5800B3A708 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1899D26718BD1CFB0035A1B0 /* FBShimmeringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringView.m; sourceTree = "<group>"; };
 		1899D26818BD1CFB0035A1B0 /* FBShimmeringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmeringView.h; sourceTree = "<group>"; };
 		1899D26918BD1CFB0035A1B0 /* FBShimmeringLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringLayer.m; sourceTree = "<group>"; };
 		1899D26A18BD1CFB0035A1B0 /* FBShimmeringLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmeringLayer.h; sourceTree = "<group>"; };
 		1899D26D18BD1D070035A1B0 /* FBShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmering.h; sourceTree = "<group>"; };
-		5CEF702BB5574A90B448BF09 /* libPods-FBShimmeringTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FBShimmeringTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8BB5B318A5A1EE00EB2793 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		EC8BB5B418A5A1F500EB2793 /* PATENTS */ = {isa = PBXFileReference; lastKnownFileType = text; path = PATENTS; sourceTree = "<group>"; };
 		EC8BB5B518A5A30700EB2793 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = CONTRIBUTING.md; sourceTree = "<group>"; };
@@ -69,8 +72,6 @@
 		ECEA60FE18A49C620064AFF4 /* libFBShimmering.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFBShimmering.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECEA610118A49C620064AFF4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ECEA610518A49C620064AFF4 /* FBShimmering-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBShimmering-Prefix.pch"; sourceTree = "<group>"; };
-		ECEA610F18A49C620064AFF4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		ECEA611218A49C620064AFF4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				077ACA6C1CBD6B5800B3A708 /* CoreGraphics.framework in Frameworks */,
+				077ACA6A1CBD6B4300B3A708 /* UIKit.framework in Frameworks */,
 				ECEA610218A49C620064AFF4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,7 +99,9 @@
 				ECEA610018A49C620064AFF4 /* Frameworks */,
 				ECEA60FF18A49C620064AFF4 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		ECEA60FF18A49C620064AFF4 /* Products */ = {
 			isa = PBXGroup;
@@ -109,10 +114,9 @@
 		ECEA610018A49C620064AFF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				077ACA6B1CBD6B5800B3A708 /* CoreGraphics.framework */,
+				077ACA691CBD6B4300B3A708 /* UIKit.framework */,
 				ECEA610118A49C620064AFF4 /* Foundation.framework */,
-				ECEA610F18A49C620064AFF4 /* XCTest.framework */,
-				ECEA611218A49C620064AFF4 /* UIKit.framework */,
-				5CEF702BB5574A90B448BF09 /* libPods-FBShimmeringTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,8 +169,9 @@
 		ECEA60F618A49C620064AFF4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = FB;
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "Kimon Tsinteris";
+				ORGANIZATIONNAME = Facebook;
 			};
 			buildConfigurationList = ECEA60F918A49C620064AFF4 /* Build configuration list for PBXProject "FBShimmering" */;
 			compatibilityVersion = "Xcode 3.2";
