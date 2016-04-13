@@ -218,10 +218,10 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 
 - (void)setShimmeringAnimationOpacity:(CGFloat)shimmeringAnimationOpacity
 {
-    if (shimmeringAnimationOpacity != _shimmeringAnimationOpacity) {
-        _shimmeringAnimationOpacity = shimmeringAnimationOpacity;
-        [self _updateMaskColors];
-    }
+  if (shimmeringAnimationOpacity != _shimmeringAnimationOpacity) {
+    _shimmeringAnimationOpacity = shimmeringAnimationOpacity;
+    [self _updateMaskColors];
+  }
 }
 
 - (void)setShimmeringOpacity:(CGFloat)shimmeringOpacity
@@ -311,7 +311,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
   // Everything outside the mask layer is hidden, so we need to create a mask long enough for the shimmered layer to be always covered by the mask.
   CGFloat length = 0.0f;
   if (_shimmeringDirection == FBShimmerDirectionDown ||
-    _shimmeringDirection == FBShimmerDirectionUp) {
+      _shimmeringDirection == FBShimmerDirectionUp) {
     length = CGRectGetHeight(_contentLayer.bounds);
   } else {
     length = CGRectGetWidth(_contentLayer.bounds);
@@ -362,7 +362,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
     return;
   }
 
-  // ensure layed out
+  // ensure layout
   [self layoutIfNeeded];
 
   BOOL disableActions = [CATransaction disableActions];
@@ -377,7 +377,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
       CAAnimation *slideAnimation = [_maskLayer animationForKey:kFBShimmerSlideAnimationKey];
       if (slideAnimation != nil) {
 
-        // determing total time sliding
+        // determine total time sliding
         CFTimeInterval now = CACurrentMediaTime();
         CFTimeInterval slideTotalDuration = now - slideAnimation.beginTime;
 

@@ -11,10 +11,14 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, FBShimmerDirection) {
-    FBShimmerDirectionRight,    // Shimmer animation goes from left to right
-    FBShimmerDirectionLeft,     // Shimmer animation goes from right to left
-    FBShimmerDirectionUp,       // Shimmer animation goes from below to above
-    FBShimmerDirectionDown,     // Shimmer animation goes from above to below
+  //! Shimmer animation goes from left to right
+  FBShimmerDirectionRight,
+  //! Shimmer animation goes from right to left
+  FBShimmerDirectionLeft,
+  //! Shimmer animation goes from below to above
+  FBShimmerDirectionUp,
+  //! Shimmer animation goes from above to below
+  FBShimmerDirectionDown,
 };
 
 static const float FBShimmerDefaultBeginTime = CGFLOAT_MAX;
@@ -39,7 +43,7 @@ static const float FBShimmerDefaultBeginTime = CGFLOAT_MAX;
 //! @abstract The highlight length of shimmering. Range of [0,1], defaults to 1.0.
 @property (assign, nonatomic, readwrite) CGFloat shimmeringHighlightLength;
 
-//! @abstract Same as "shimmeringHighlightLength", just for downward compatibility @deprecated
+//! @abstract Same as "shimmeringHighlightLength", just for downward compatibility. @deprecated
 @property (assign, nonatomic, readwrite, getter = shimmeringHighlightLength, setter = setShimmeringHighlightLength:) CGFloat shimmeringHighlightWidth DEPRECATED_MSG_ATTRIBUTE("Use shimmeringHighlightLength");
 
 //! @abstract The direction of shimmering animation. Defaults to FBShimmerDirectionRight.
