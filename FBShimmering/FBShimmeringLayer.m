@@ -119,6 +119,11 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 @end
 
 @interface FBShimmeringLayer ()
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 100000
+// iOS 10 SDK has CALayerDelegate and CAAnimationDelegate as proper protocols.
+<CALayerDelegate, CAAnimationDelegate>
+#endif
+
 @property (strong, nonatomic) FBShimmeringMaskLayer *maskLayer;
 @end
 
