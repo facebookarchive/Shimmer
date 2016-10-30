@@ -59,4 +59,15 @@ LAYER_RW_PROPERTY(shimmeringBeginTime, setShimmeringBeginTime:, CFTimeInterval)
   }
 }
 
+- (void)layoutSubviews
+{
+  // Autolayout requires these to be set on the UIView, not the CALayer.
+  // Do this *before* the layer has a chance to set the properties, as the
+  // setters would be ignored (even for autolayout) if set to the same value.
+  _contentView.bounds = self.bounds;
+  _contentView.center = self.center;
+
+  [super layoutSubviews];
+}
+
 @end
