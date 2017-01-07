@@ -446,6 +446,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
       // add slide animation
       slideAnimation = shimmer_slide_animation(animationDuration, _shimmeringDirection);
       slideAnimation.fillMode = kCAFillModeForwards;
+      slideAnimation.speed = -1;
       slideAnimation.removedOnCompletion = NO;
       if (_shimmeringBeginTime == FBShimmerDefaultBeginTime) {
         _shimmeringBeginTime = CACurrentMediaTime() + fadeOutAnimation.duration;
