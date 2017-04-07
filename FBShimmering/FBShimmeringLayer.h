@@ -14,7 +14,7 @@
 /**
   @abstract Lightweight, generic shimmering layer.
  */
-@interface FBShimmeringLayer : CALayer <FBShimmering>
+@interface FBShimmeringLayer : CALayer <FBShimmering,CALayerDelegate>
 
 //! @abstract The content layer to be shimmered.
 @property (strong, nonatomic) CALayer *contentLayer;
