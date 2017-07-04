@@ -31,7 +31,7 @@ There are two options:
  1. Shimmer is available as `Shimmer` in [Cocoapods](http://cocoapods.org).
  2. Manually add the files into your Xcode project. Slightly simpler, but updates are also manual.
 
-Shimmer requires iOS 6 or later.
+Shimmer requires iOS 6 or later, tvOS 9 or later.
 
 ## How it works
 Shimmer uses the `-[CALayer mask]` property to enable shimmering, similar to what's described in John Harper's 2009 WWDC talk (unfortunately no longer online). Shimmer uses CoreAnimation's timing features to smoothly transition "on-beat" when starting and stopping the shimmer.
