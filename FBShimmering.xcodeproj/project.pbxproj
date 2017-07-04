@@ -419,6 +419,7 @@
 				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
+				SUPPORTED_PLATFORMS = "iphonesimulator appletvos iphoneos";
 			};
 			name = Debug;
 		};
@@ -435,6 +436,7 @@
 				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
+				SUPPORTED_PLATFORMS = "iphonesimulator appletvos iphoneos";
 			};
 			name = Release;
 		};
