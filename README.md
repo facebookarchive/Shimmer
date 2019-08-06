@@ -44,5 +44,5 @@ We have a version of Shimmer for Android, too! It's [also available on GitHub](h
 See the CONTRIBUTING file for how to help out.
 
 ## License
-Shimmer is BSD-licensed. We also provide an additional patent grant.
+Shimmer is BSD-licensed. 
 
