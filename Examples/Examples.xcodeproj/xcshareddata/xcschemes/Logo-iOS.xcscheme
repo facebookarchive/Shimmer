@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "1110"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A1C8E0BA1E13C0C9002D6069"
-               BuildableName = "Shimmer.framework"
-               BlueprintName = "Shimmer"
-               ReferencedContainer = "container:FBShimmering.xcodeproj">
+               BlueprintIdentifier = "EC45CAC918ADC7CE0063DD11"
+               BuildableName = "Logo-iOS.app"
+               BlueprintName = "Logo-iOS"
+               ReferencedContainer = "container:Examples.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,15 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A1C8E0BA1E13C0C9002D6069"
-            BuildableName = "Shimmer.framework"
-            BlueprintName = "Shimmer"
-            ReferencedContainer = "container:FBShimmering.xcodeproj">
+            BlueprintIdentifier = "EC45CAC918ADC7CE0063DD11"
+            BuildableName = "Logo-iOS.app"
+            BlueprintName = "Logo-iOS"
+            ReferencedContainer = "container:Examples.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -56,15 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A1C8E0BA1E13C0C9002D6069"
-            BuildableName = "Shimmer.framework"
-            BlueprintName = "Shimmer"
-            ReferencedContainer = "container:FBShimmering.xcodeproj">
+            BlueprintIdentifier = "EC45CAC918ADC7CE0063DD11"
+            BuildableName = "Logo-iOS.app"
+            BlueprintName = "Logo-iOS"
+            ReferencedContainer = "container:Examples.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
