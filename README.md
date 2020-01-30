@@ -26,10 +26,45 @@ shimmeringView.shimmering = YES;
 There's also an example project. In the example, you can swipe horizontally and vertically to try various shimmering parameters, or tap to start or stop shimmering. (To build the example locally, you'll need to open `FBShimmering.xcworkpace` rather than the `.xcodeproj`.)
 
 ## Installation
-There are two options:
 
- 1. Shimmer is available as `Shimmer` in [Cocoapods](http://cocoapods.org).
- 2. Manually add the files into your Xcode project. Slightly simpler, but updates are also manual.
+### [Cocoapods](http://cocoapods.org)
+Shimmer is available on CocoaPods. Add the following to your Podfile:
+
+``` 
+target 'MyApp' do
+	pod "Shimmer"
+end 
+```
+
+Quit Xcode completely before running
+> `pod install`
+in the project directory in Terminal.
+
+To update your version of Shimmer, run
+> `pod update Shimmer `
+
+in the project directory in Terminal.
+
+Don’t forget to use the workspace .xcworkspace file, not the project .xcodeproj file.
+
+### [Carthage](https://github.com/Carthage/Carthage)
+The standard way to use Carthage is to have a Cartfile list the dependencies, and then run carthage update to download the dependenices into the Cathage/Checkouts folder and build each of those into frameworks located in the Carthage/Build folder, and finally the developer has to manually integrate in the project.
+
+Shimmer is also available through Carthage.
+
+Add the following to your Cartfile to get the latest release branch:
+`github "facebook/Shimmer"`
+
+Run
+> `carthage update`
+ 
+Or you can update Only Shimmer 
+> `carthage update Shimmer --platform iOS --no-use-binaries`
+
+in Terminal. This will fetch dependencies into a Carthage/Checkouts folder, then build each one.
+
+### Manually 
+Add the files into your Xcode project. Slightly simpler, but updates are also manual.
 
 Shimmer requires iOS 6 or later.
 
